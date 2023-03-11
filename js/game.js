@@ -20,7 +20,7 @@ let cronometro = setInterval(function (){
     if(tempo < 0) {
         clearInterval(cronometro)
         clearInterval(criaMosquito)
-        alert("You win")
+        window.location.href = 'vitoria.html'
     } else {
         document.getElementById('cronometro').innerHTML = tempo
     }
