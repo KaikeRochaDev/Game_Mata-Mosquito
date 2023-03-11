@@ -19,7 +19,7 @@ function posicaoRandomica(){
             document.getElementById('v' + vidas).src="../imgs/coracao_vazio.png"
 
         } else{
-            alert('Interrompido')
+            window.location.href = 'fim_de_jogo.html'
         }
 
         vidas+= 1
