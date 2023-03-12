@@ -2,6 +2,20 @@ var altura = 0
 var largura = 0
 let vidas = 1
 let tempo = 5
+let criaMosquitoTempo = 2000
+let nivel = window.location.search
+nivel = nivel.replace("?", '')
+
+if (nivel === 'facil'){
+    //2000
+    criaMosquitoTempo = 2000
+} else if(nivel === 'normal'){
+    //1500
+    criaMosquitoTempo = 1500
+} else if(nivel === 'dificil') {
+    //1000
+    criaMosquitoTempo = 1000
+}
 
 document.getElementById('cronometro').innerHTML = tempo
 
@@ -9,7 +23,6 @@ function ajustaTamanhoPalcoJogo(){
     altura = window.innerHeight
     largura = window.innerWidth
 
-    console.log(altura, largura)
 }
 
 ajustaTamanhoPalcoJogo()
@@ -64,7 +77,7 @@ function posicaoRandomica(){
 
 let criaMosquito = setInterval(function() {
     posicaoRandomica()
-}, 2000)
+}, criaMosquitoTempo)
 
 function tamanhoAleatorio(){
     let classe = Math.floor(Math.random() * 3)
